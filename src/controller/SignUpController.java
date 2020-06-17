@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -36,6 +37,16 @@ public class SignUpController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		doGet(request,response);
+		
+	}
+	public static void main(String args[]) throws ClassNotFoundException, SQLException, IOException {
+		Connection con;
+		con=ConnectionManager.getConnection();
+		if(con!=null)
+			System.out.println(" Connection established");
+		else
+			System.out.println("Check your connection");
+		
 		
 	}
 
